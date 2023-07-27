@@ -1,0 +1,25 @@
+/*HEADER*/
+.encabezado {
+  border-bottom: 1px solid;
+  
+}
+
+#nav-list {
+  list-style-type: none;
+  grid-template-columns: repeat(6, 200px);
+  display: grid;
+  justify-content: center;
+  background-color: $color-blanco;
+  li {
+    font-size: 18px;
+    margin: 15px;
+  }
+  a {
+    padding: $paddingvar;
+    text-decoration: none;
+    color: $color-negro;
+    &:hover {
+      color: $color-azul;
+    }
+  }
+}

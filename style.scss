@@ -1,0 +1,119 @@
+@import "variables";
+@import "header";
+@import "generales";
+@import "logos";
+
+@media screen and (max-width: 450px) {
+
+  
+  .menu{
+    margin-left: 550px;
+    display: flex;
+    justify-content: flex-end;
+    background-color:rgb(255, 255, 255);
+    color: $color-negro;
+    border-style: solid;
+    .boton{
+      width: 360px;
+    }
+    a{
+      width: 360px;
+      color: $color-negro;
+      font-size: 3.5rem;
+    }
+    .dropdown-item{
+      font-size: 3.5rem;
+      background-color:rgb(41, 37, 37);
+      color: $color-blanco;
+    }
+  }
+
+  #nav-list li {
+    font-size: 2.5rem;
+    display: none;
+  
+  }
+  .container {
+    h1 {
+      font-size: 4rem;
+      background-color: $color-negro;
+      color:$color-blanco;
+      padding-right: 25px;
+    }
+    h2 {
+      font-size: 3.5rem;
+    }
+    h3{
+      font-size: 2.8rem;
+    }
+  }
+
+  .contenedor {
+    p {
+      font-size: 2.8rem;
+    }
+  }
+
+  h3 {
+    font-size: 3.2rem;
+  }
+  h5 {
+    font-size: 2.7rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
+
+  img.logo-cvac {
+    width: 250px;
+    height: 150px;
+  }
+  img.img-fluid {
+    width: 700px;
+    height: 800px;
+    margin-right: 50px;
+  }
+  img.img-fluid-banner {
+    width: 100%;
+  }
+  img.img-fluid-candy {
+    width: 1000px;
+    height: 700px;
+  }
+  img.logo_red_soc {
+    width: 60px;
+    height: 60px;
+  }
+  iframe.embed-responsive-item {
+    width: 900px;
+    height: 500px;
+  }
+
+  input.form-control {
+    width: 100%;
+    height: 100px;
+    font-size: 2.5rem;
+  }
+  input.btn {
+    width: 400px;
+    height: 100px;
+    font-size: 2rem;
+  }
+  div.text-center {
+    font-size: 2.5rem;
+  }
+  .contenedor_candy {
+    width: 100%;
+  }
+  
+
+
+  
+  }
+    
+  
+ 
+
+
+
+

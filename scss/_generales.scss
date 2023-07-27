@@ -1,0 +1,72 @@
+/*BODY*/
+.body {
+  @include body;
+}
+
+.fuente_carlito {
+  font-family: $fuente;
+}
+
+/*GENERALES*/
+.contenedor {
+  display: flex;
+  @include align-justify;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: $sombreado;
+  p {
+    margin-left: 35px;
+    color: $color-negro;
+    font-size: 1rem;
+  }
+  img {
+    height: 425px;
+    width: 350px;
+  }
+  iframe {
+    height: 400px;
+    width: 500px;
+  }
+}
+
+.container {
+  h1 {
+    @include container-h1;
+   
+   
+
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+}
+.contenedor_candy {
+  display: inline-block;
+  @include align-justify;
+  text-align: center;
+  img {
+    width: 800px;
+    height: 450px;
+  }
+}
+footer {
+  margin-top: 2px;
+}
+
+.menu{
+  display: none;
+
+}
+
+
+.login{
+  margin-left: 260px;
+  width: 800px;
+}
