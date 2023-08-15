@@ -1,73 +1,97 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    alert("Bienvenidos al sector Candy de CineVac, aqui podras comprar en linea los mejores combos para disfrutar viendo tus peliculas favoritas.")
+   
+    const combos = [
+        {
+            numero: 1,
+            alimento: 'Balde de pochoclos grande',
+            gaseosa: 'Coca cola x2',
+            precio: '$2000'
+        },
+         combo2 = {
+            numero: 2,
+            alimento:" 1 Balde de pochoclos chico",
+            gaseosa:"Coca cola x1",
+            precio:"$1000",   
+        },
+         combo3 = {
+            numero: 3,
+            alimento:"Super pancho x2",
+            gaseosa: "Coca cola x2",
+            precio:"$2000"
+        },   
+        combo4 = {
+            numero: 4,
+            alimento:"Super pancho x1",
+            gaseosa:"Coca cola x1",
+            precio:"$1000",
+        }, 
+        combo5 = {
+            numero: 5,
+            alimento: "Balde de pochoclos grande",
+            gaseosa:"Coca cola x3",
+            golosinas:"Gomitas, rocklets, chocolate", 
+            precio:"$3000",
+        }
+        
+    ];
 
-    let combo1 = {
-        alimento: ' Balde de pochoclos grande',
-        gaseosa: 'Coca cola x2',
-        precio: "$2000",  
-    }
+    const combosContainer = document.querySelector('.combos-container');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-
-    let combo2 = {
-        alimento:" 1 Balde de pochoclos chico",
-        gaseosa:"Coca cola x1",
-        precio:"$1000",   
-    }
-
-    let combo3 = {
-        alimento:"Super pancho x2",
-        gaseosa: "Coca cola x2",
-        precio:"$2000"
-    }
-
-    let combo4 = {
-        alimento:"Super pancho x1",
-        gaseosa:"Coca cola x1",
-        precio:"$1000",
-    }
-
-    let combo5 = {
-        alimento: "Balde de pochoclos grande",
-        gaseosa:"Coca cola x3",
-        golosinas:"Gomitas, rocklets, chocolate", 
-        precio:"$3000",
-    }
-    const combos = [combo1, combo2, combo3, combo4, combo5]
-
-
-    function mostrarCombos() {
-        let nombreCombos = "Combos disponibles:\n";
+    function mostrarCombosEnPagina() {
+        let combosHtml = "";
         for (let i = 0; i < combos.length; i++) {
-        const combo = combos[i];
-        nombreCombos += `${i + 1}. Combo ${i + 1}: ${combo.alimento}, ${combo.gaseosa}\n`;
+            const combo = combos[i];
+            combosHtml += `
+                <div class="combo">
+                    <h3>Combo ${combo.numero}</h3>
+                    <p> ${combo.alimento}</p>
+                    <p> ${combo.gaseosa}</p>
+                    <p>Precio: ${combo.precio}</p>
+                    <button class="agregar-carrito" data-index="${i}">Agregar al carrito</button>
+                </div>
+            `;
         }
-        return nombreCombos;
+        combosContainer.innerHTML = combosHtml;
     }
-    do{
-        const indiceCombo=parseInt(prompt(mostrarCombos())) -1;
 
 
-        if (indiceCombo >= 0 && indiceCombo < combos.length) {
-            const comboSeleccionado = combos[indiceCombo];
-        
-            // Muestra la información del combo seleccionado
-            let comboInfo = `Has seleccionado el Combo ${indiceCombo + 1}:\n`;
-            comboInfo += `Alimento: ${comboSeleccionado.alimento}\n`;
-            comboInfo += `Gaseosa: ${comboSeleccionado.gaseosa}\n`;
-        
-            // Comprueba si hay golosinas en el combo
-            if (comboSeleccionado.golosinas) {
-            comboInfo += `Golosinas: ${comboSeleccionado.golosinas}\n`;
+    function actualizarCarrito() {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+    
+
+    const notificacion = document.querySelector('.notificacion');
+    
+    function mostrarNotificacion(mensaje) {
+        notificacion.textContent = mensaje;
+        notificacion.classList.add('visible');
+        setTimeout(() => {
+            notificacion.classList.remove('visible');
+        }, 3000); 
+    }
+
+    combosContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('agregar-carrito')) {
+            const index = parseInt(event.target.getAttribute('data-index'));
+            if (!isNaN(index) && index >= 0 && index < combos.length) {
+                agregarComboAlCarrito(index);
             }
-        
-            comboInfo += `Precio: ${comboSeleccionado.precio}`;
-        
-            alert(comboInfo);
-        } else {
-            alert("Selección inválida. Por favor, elige un combo válido.");
         }
-    }
-    while(confirm(("¿Deseas ver más combos?")));
+    });
 
+    const carritoLista = document.querySelector('.carrito-lista');
+
+    
+    function agregarComboAlCarrito(index) {
+        const comboSeleccionado = combos[index];
+        carrito.push(comboSeleccionado);
+        actualizarCarrito();
+        mostrarNotificacion('Combo agregado al carrito.');
+    }
+    
+
+    mostrarCombosEnPagina();
+    
 });
+
