@@ -341,18 +341,19 @@ footer {
 }
 .combo, .combo-carrito{
   margin-top: 65px;
-  border: 1px solid black; 
+  border: 1px solid rgb(0, 0, 0); 
   height: 200px;
   width: 300px;
   display: grid;
   background-color: #ffffff;
   list-style:none;
+  
 }
 .combos-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Espacio entre las columnas */
-  gap: 20px; /* Espacio entre los combos */
+  justify-content: space-between; 
+  gap: 20px; 
 }
 
 .combo p{
@@ -369,12 +370,13 @@ footer {
 
 .carrito-link{
   position: fixed;
-  right: 20px; /* Ajusta esto para definir la distancia desde el borde derecho */
-  transform: translateY(-50%); /* Centra verticalmente */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  right: 20px;
+  transform: translateY(-50%); 
+  z-index: 1000; 
   width: 40px;
   height: 40px;
   margin-top: 30px;
+ 
 }
 
-/*# sourceMappingURL=style.css.map */
+

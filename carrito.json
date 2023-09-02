@@ -1,0 +1,33 @@
+[
+    {
+        "numero": 1,
+        "alimento": "Balde de pochoclos grande",
+        "gaseosa": "Coca cola x2",
+        "precio": "$2000"
+    },
+    {
+        "numero": 2,
+        "alimento": "1 Balde de pochoclos chico",
+        "gaseosa": "Coca cola x1",
+        "precio": "$1000"
+    },
+    {
+        "numero": 3,
+        "alimento": "Super pancho x2",
+        "gaseosa": "Coca cola x2",
+        "precio": "$2000"
+    },
+    {
+        "numero": 4,
+        "alimento": "Super pancho x1",
+        "gaseosa": "Coca cola x1",
+        "precio": "$1000"
+    },
+    {
+        "numero": 5,
+        "alimento": "Balde de pochoclos grande",
+        "gaseosa": "Coca cola x3",
+        "golosinas": "Gomitas, rocklets, chocolate",
+        "precio": "$3000"
+    }
+]

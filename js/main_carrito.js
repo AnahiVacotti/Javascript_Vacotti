@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.target.classList.contains('eliminar-combo')) {
             const index = parseInt(event.target.getAttribute('data-index'));
             if (!isNaN(index) && index >= 0 && index < carrito.length) {
-                carrito.splice(index, 1); // Elimina el combo del carrito
+                carrito.splice(index, 1); 
                 actualizarCarrito();
                 mostrarNotificacion('Combo eliminado del carrito.');
-                mostrarCarritoEnPagina(); // Actualiza la lista en pantalla
+                mostrarCarritoEnPagina(); 
             }
         }
     });
